@@ -9,10 +9,14 @@ Also, I didn't read the requirements properly and thought that I had to do all 3
 PACMAN
 
 I used Rim lighting (Pre-midterm) for the walls of the map. I think this enhances the scene as pac-man takes place within a cyber-esque world. Not only does the rim glow effect enhance the atmosphere, but it also works as a way to denote the edges of walls. This was done by calculating the dot product of the normalized normal vector and view direction, which then gets saturated to prevent unwanted values, and then multiplied with a color and a texture to finalize the effect. In the original game, the edges are flat pixels, but with the rim lighting the edges smoothly transiton into the darkness of the rest of the wall, which gives it a more professional and modern touch. In addition, unlike the one used in class, you can change the texture of the rim, which I took advantage of to give the walls a "cyber" look (lines all around them).
+<img width="723" height="264" alt="Screenshot 2025-12-09 at 2 47 53 PM" src="https://github.com/user-attachments/assets/76ca95b3-6e45-4e42-8560-dcee54c247ed" />
+
 
 WARIO LAND 3:
 
 For this one I used a polygon surface deformation shader (AKA water shader) (Post-midterm). This enhances the scene because in the original game the level takes place at night during presumably a storm. The rapid water and wavyness makes sense to convey the intention behind the level's theme. In additon, unlike the class water shader, the water ripples in both the X and Z axes in combination with a scrolling texture, which gives it an even more chaotic feel, fitting with the scene.
+<img width="724" height="340" alt="Screenshot 2025-12-09 at 2 48 18 PM" src="https://github.com/user-attachments/assets/b4a52e94-34b4-4a05-9787-5d5c3926a2ba" />
+
 
 STREET FIGHTER 2:
 
@@ -25,9 +29,11 @@ Here's a diagram detailing the process:
 
 <img width="1223" height="556" alt="Screenshot 2025-12-09 at 2 23 05 PM" src="https://github.com/user-attachments/assets/aba00632-f9ed-4dc6-9b0a-45fefe218adc" />
 
-I used flat shading (Pre-midterm) for the characters, as street fighter is a retro game. I thought that in this 3D interpretation, that the retro feel of the game should be kept alive, so by using flat shading it gives the effect of early 3D fighting games which had perfectly flat polygons shaded on them.
+I used flat shading (Pre-midterm) for the characters, as street fighter is a retro game. I thought that in this 3D interpretation, that the retro feel of the game should be kept alive, so by using flat shading it gives the effect of early 3D fighting games which had perfectly flat polygons shaded on them. How this was done is that each polygon has independent lighting, so instead of smoothly and equally applying the lighting across the object, each face is given one amount light to give the retro effect.
 
-For Decal, I applied it to the environment surrounding the player. This is because the environments should be more detailed, and decal allows for multiple textures on top of each other to achieve this effect. For example, I gave the sky background a sky texture with a pixel decal, to sell the retro theme I'm going for while still looking appropriate.
+For Decal, I applied it to the environment surrounding the player. This is because the environments should be more detailed, and decal allows for multiple textures on top of each other to achieve this effect. For example, I gave the sky background a sky texture with a pixel decal, to sell the retro theme I'm going for while still looking appropriate. How this was done is that the base albedo texture is applied, then the decal texture is overlayed with the base to create a "decal" effect. In this case, I applied this to add extra detail and meaning to the scene as was described above.
+<img width="724" height="402" alt="Screenshot 2025-12-09 at 2 48 27 PM" src="https://github.com/user-attachments/assets/c404b18b-dc14-4bc5-8990-a9ed1a4829dd" />
+
 
 In addition, there are some other shaders applied to the scenes to enhance them in various ways if you are interested, such as the outline effect in Wario Land 3 given to the player and enemy to give them distinction from the environment, or the scrolling texture in PACMAN on the edges of the screen, which is to give the player visual indication that those areas teleport the player to the other side of the screen. I ended up implementing a lot more shaders than needed, so if you want to take a look at all of them you can find them in the project itself.
 
